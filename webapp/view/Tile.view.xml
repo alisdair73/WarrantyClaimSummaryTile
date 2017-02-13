@@ -1,0 +1,34 @@
+<core:View 
+		xmlns="sap.suite.ui.commons" 
+		xmlns:ui="sap.suite.ui.microchart" 
+		xmlns:core="sap.ui.core" 
+		controllerName="hnd.dpe.warranty.info_tilewarranty_info_tile.controller.Tile">
+		
+     <GenericTile 
+  	 	id="warrantyTile"
+	 	press="onPress" 
+	 	header="Claims Summary" 
+	 	frameType="OneByOne"
+	 	headerImage="sap-icon://multi-select">
+        <tileContent>
+        	<TileContent footer="More Details...">
+            	<content>
+                      <ui:ComparisonMicroChart 
+                        id="warrantyInfoChart" 
+                        data="{path: '/Zwty_V_Waranty_Claim_Info', 
+                             length: 3, 
+                             sorter: { path: 'statusCount',
+                                       descending: true }
+                               }">
+                        <ui:data>
+                              <ui:ComparisonMicroChartData 
+                                   title="{statusText}"
+                                   value="{statusCount}" 
+                                   color="Neutral" />
+                         </ui:data>
+                    </ui:ComparisonMicroChart>
+				</content>
+			</TileContent>
+		</tileContent>
+	</GenericTile>
+</core:View>

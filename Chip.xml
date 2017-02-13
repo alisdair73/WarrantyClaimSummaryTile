@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chip xmlns="http://schemas.sap.com/sapui2/services/Chip/1">
+    <implementation>
+        <sapui5>
+            <viewName>hnd.dpe.warranty.info_tilewarranty_info_tile.Tile.view.xml</viewName>
+        </sapui5>
+    </implementation>
+    <appearance>
+        <title>Warranty Info Tile</title>
+        <description>Warranty Info Tile - Chip with Microchart</description>
+    </appearance>
+</chip>

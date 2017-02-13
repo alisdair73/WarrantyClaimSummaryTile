@@ -1,0 +1,29 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='DEC_TRUSTED')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZWTY_V_WARANTY_CLAIM_INFO_CDS" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="Zwty_V_Waranty_Claim_InfoType" sap:label="Tile Feeder for Warranty Claim Info" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="status"/>
+                </Key>
+                <Property Name="status" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Processing Status" sap:quickinfo="Processing Status of Warranty Claim"/>
+                <Property Name="statusText" Type="Edm.String" MaxLength="40" sap:label="Processing Status" sap:quickinfo="Description of Processing Status of Warranty Claim"/>
+                <Property Name="status_count" Type="Edm.Int32"/>
+            </EntityType>
+            <EntityContainer Name="ZWTY_V_WARANTY_CLAIM_INFO_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="Zwty_V_Waranty_Claim_Info" EntityType="ZWTY_V_WARANTY_CLAIM_INFO_CDS.Zwty_V_Waranty_Claim_InfoType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZWTY_V_WARANTY_CLAIM_INFO_CDS/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZWTY_V_WARANTY_CLAIM_INFO_CDS/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>
